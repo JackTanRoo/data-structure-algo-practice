@@ -27,3 +27,17 @@ var time1 = performance.now();
 addUpTo2(1000000000);
 var time2 = performance.now();
 console.log(`Time Elapsed for 2nd: ${(time2 - time1) / 1000} seconds.`)
+
+// 
+
+// Big O - worst case scenario
+// as N grows, how does the run time or number of operations grow
+// O(1) = constant
+// O(n) = grows linear
+// O(n2) = squared, e.g. this is the nested loop
+// 
+
+
+// Space complexity
+// how much is the space required for output or interim calculations in the algo as n expands
+// use same as O(n) notation
