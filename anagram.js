@@ -32,12 +32,12 @@ function validAnagram(str1, str2) {
 	console.log(str1Obj, str2Obj)
 
 	Object.keys(str1Obj).forEach (key => {
-		if (str2Obj[key] == undefined || str2Obj[key] !== str1Obj[key]) {
+		if (str2Obj[key] === undefined || str2Obj[key] !== str1Obj[key]) {
 			// console.log(str1, str2, key, str1Obj[key], str2Obj[key], "false")
 			return false
 			// break
 		}
 	})
-	// console.log(str1, str2, "true")
+	console.log(str1, str2, "true")
 	return true
 };
