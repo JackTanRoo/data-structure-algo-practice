@@ -41,3 +41,5 @@ console.log(`Time Elapsed for 2nd: ${(time2 - time1) / 1000} seconds.`)
 // Space complexity
 // how much is the space required for output or interim calculations in the algo as n expands
 // use same as O(n) notation
+// numbers only have 1 byte size
+// arrays have multiple bytes
