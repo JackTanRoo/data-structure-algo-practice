@@ -42,4 +42,16 @@ console.log(`Time Elapsed for 2nd: ${(time2 - time1) / 1000} seconds.`)
 // how much is the space required for output or interim calculations in the algo as n expands
 // use same as O(n) notation
 // numbers only have 1 byte size
-// arrays have multiple bytes
+// arrays have multiple bytes to the size of the elements
+// 
+
+
+// Objects
+// Search = O(N) / the time required to check if somehting is within the Object // e.g., hasOwnProperty - this method is constant time O(N)
+// Access = O(1) constant time for search, same for insertion - this is when you have the key already and need to access the value associated with the key
+
+
+// Arrays
+// Access = O(1)
+// Search = O(N)
+// Insert = 
