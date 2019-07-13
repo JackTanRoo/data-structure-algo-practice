@@ -1,9 +1,10 @@
-sameFrequency(182,281) // true
-sameFrequency(34,14) // false
-sameFrequency(100,null) // false
-sameFrequency(22,222) // false
-sameFrequency(22,"") // false
-sameFrequency(10101, 111000) // true
+// sameFrequency(182,281) // true
+// sameFrequency(34,14) // false
+// sameFrequency(100,null) // false
+// sameFrequency(22,222) // false
+// sameFrequency(22,"") // false
+sameFrequency(10101, 111000) // false
+sameFrequency(10101, 11100) // true
 
 
 
@@ -34,14 +35,16 @@ function sameFrequency(num1, num2) {
 	// break num1 into an object with keys being the digits, values being frequency
 	
 	for (const digit in numStr1) {
-
-		if (!objStr1[digit]) {
 		
-			objStr1[digit] = 1
+		// console.log()
+
+		if (!objStr1[numStr1.charAt(digit)]) {
+		
+			objStr1[numStr1.charAt(digit)] = 1
 		
 		} else {
 		
-			objStr1[digit] ++
+			objStr1[numStr1.charAt(digit)] ++
 		
 		}
 	};
@@ -50,17 +53,18 @@ function sameFrequency(num1, num2) {
 
 	for (const digit2 in numStr2) {
 
-		if (!objStr2[digit2]) {
+		if (!objStr2[numStr1.charAt(digit2)]) {
 		
-			objStr2[digit2] = 1
+			objStr2[numStr1.charAt(digit2)] = 1
 		
 		} else {
 		
-			objStr2[digit2] ++
+			objStr2[numStr1.charAt(digit2)] ++
 		
 		}
 	};	
 
+	console.log(num1, num2, numStr1, numStr2, objStr1, objStr2)
 
 
 	// iterate across the final 2 objects and compare digits and values to be same
