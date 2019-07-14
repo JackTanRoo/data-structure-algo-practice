@@ -54,4 +54,4 @@ function maxSubarraySum(array, num){
 	// 
 	console.log(array, num, array[left], array[right],result)
 	return result;
-}
+};
