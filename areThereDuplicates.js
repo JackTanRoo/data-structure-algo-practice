@@ -22,4 +22,4 @@ function areThereDuplicates(){
 	return false
 	// iterate through arguments and save into object if the argument does not yet exist as a key
 
-}
+};
