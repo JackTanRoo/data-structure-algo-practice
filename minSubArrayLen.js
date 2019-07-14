@@ -1,8 +1,8 @@
 
 minSubArrayLen([2,3,1,2,4,3], 7) // 2
 minSubArrayLen([2,1,6,5,4], 9) // 2
-// minSubArrayLen([3,1,7,11,2,9,8,21,62,33,19], 52) // 0
-// minSubArrayLen([2,3,1,2,4,3], 95) // 0
+minSubArrayLen([3,1,7,11,2,9,8,21,62,33,19], 52) // 1
+minSubArrayLen([2,3,1,2,4,3], 95) // 0
 
 
 function minSubArrayLen(array, num){
@@ -15,9 +15,9 @@ function minSubArrayLen(array, num){
 	var right = left + distance;
 
 	// iterate through array and sum elements in between left and right inclusive
-	var temp
+	var temp = 0;
 
-	if (left === right ) {
+	if (distance === 0 ) {
 		for (var i =0; i< array.length; i++) {
 			if (array[i] >= num) { 
 				console.log(array[i], num, distance + 1)
@@ -25,26 +25,41 @@ function minSubArrayLen(array, num){
 			}
 		}
 	}
+	
+	distance = 1
+	right = left + distance;
 
-	while (distance < array.length) {
+	while (distance < array.length && distance > 0) {
 
+		temp = 0;
 
 		if (left === 0 ) {
-			for (var i = 0; i < right; i++) {
-				temp = temp + array[i]				
+			for (var j = 0; j < right + 1; j++) {
+				
+				temp = temp + array[j]
+
 			}
+			// console.log("before", array[left], array[right], temp)
+
 			if (temp >= num) { 
-				console.log(array, num, array[left], array[right], distance + 1)
+				console.log("first", array, num, array[left], array[right], distance + 1)
 				return distance + 1 
 			}
 		}
 
+		// console.log("before while loop", array[left], array[right], distance, temp)
+
 		while (right < array.length && array[right + 1] !== undefined) {
+			// console.log("before", array[left], array[right], distance, temp, array)
+
 			temp = temp - array[left] + array[right+1]
 			left++;
 			right++;
+
+			// console.log("after", array[left], array[right], temp, array)
+
 			if (temp >= num) { 
-				console.log(array, num, array[left], array[right], distance + 1)
+				console.log("second", array, num, array[left], array[right], distance + 1)
 				return distance + 1
 			}
 		}
