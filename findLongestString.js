@@ -1,14 +1,14 @@
-findLongestSubstring("") // 0
+// findLongestSubstring("") // 0
 
 findLongestSubstring("rithmschool") // 7
 
-findLongestSubstring("thisisawesome") // 6
+// findLongestSubstring("thisisawesome") // 6
 
-findLongestSubstring("thecatinthehat") // 7
+// findLongestSubstring("thecatinthehat") // 7
 
-findLongestSubstring("bbbbbb") // 1
+// findLongestSubstring("bbbbbb") // 1
 
-findLongestSubstring("substring") // 8
+// findLongestSubstring("substring") // 8
 
 
 
@@ -26,7 +26,9 @@ findLongestSubstring("substring") // 8
 
 // if counter of all unique chars < counter of all actual chars - then it is not longest sub string
 
-// if not longest sub string, then move left pointer to left by 1, and right by 1. If right pointer is at end of the string, reset left to 0, distance reduce by 1, right = left + distance
+// if not longest sub string, then move left pointer to left by 1, and right by 1. 
+
+// If right pointer is at end of the string, reset left to 0, distance reduce by 1, right = left + distance
 
 	// reduce the counter of actual chars by 1
 
@@ -80,7 +82,8 @@ function findLongestSubstring(str) {
 	// set a left pointer at 0, distance at full length of string, right pointer at length
 
 
-		
+	while (distance >= 0 && right < str.length) {
+
 
 		// if left starts at 0, then set the keys as chars from string, property as frequency of letter
 
@@ -123,14 +126,57 @@ function findLongestSubstring(str) {
 			left++
 			right++
 
+			character = str.charAt(left-1)
 
+			// reduce the counter for character on the left 
+			container[character]--
+			totalCharsCounter-- 
+
+			if (container[character] === 0) { 
+				delete container[character] 
+				uniqueCharsCounter-- 
+			}
+
+			character = str.charAt(right)
+
+			if (!container[character]) {
+					
+				container[character] = 1;
+				uniqueCharsCounter++;
+				totalCharsCounter++;
+			
+			} else {
+				
+				container[character] ++;
+				totalCharsCounter++;
+			
+			}
+
+			// check if unique string
+
+			if (totalCharsCounter === uniqueCharsCounter) {
+				console.log ("longest unique string", str, container, str.length)
+				return str.length
+			}
 
 		}
 
 		// If right pointer is at end of the string, reset left to 0, distance reduce by 1, right = left + distance
 
+		if (right + 1 >= str.length) {
+			left = 0
+			container = {}
+			distance --
+			right = left + distance;
+		}
 
-	
+	}
+
+	console.log ("finished", 1)
+	return 1
+
+}
+
 
 		// reduce the counter of actual chars by 1
 
@@ -144,64 +190,54 @@ function findLongestSubstring(str) {
 
 
 
-	while (right - left >=0 && right < str.length) {
+	// while (right - left >=0 && right < str.length) {
 	
-		if (left === 0) {
+	// 	if (left === 0) {
 
-			for (i = left; i <= right; i ++) {
-				character = str.charAt(i);
+	// 		for (i = left; i <= right; i ++) {
+	// 			character = str.charAt(i);
 
-				// each str character becomes a key in the object if there no existing key
+	// 			// each str character becomes a key in the object if there no existing key
 
-				if (!container[character]) {
-					container[character] = 1;
-				} else {
-					container[character] ++;
-					repeatCounter ++;
-				}
+	// 			if (!container[character]) {
+	// 				container[character] = 1;
+	// 			} else {
+	// 				container[character] ++;
+	// 				repeatCounter ++;
+	// 			}
 
-				// if there is all unique values then return the number of characters
-			}
+	// 			// if there is all unique values then return the number of characters
+	// 		}
 
-			if (repeatCounter === 0) {
-				console.log (str, container, str.length)
-				return str.length
-			}
-		}
+	// 		if (repeatCounter === 0) {
+	// 			console.log (str, container, str.length)
+	// 			return str.length
+	// 		}
+	// 	}
 
-		// if there are duplicating values - then iterate the left pointer up by 1 and the right pointer up by 1
-		if (right + 1 < str.length) {
-			left++
-			right++
-			repeatCounter = 0
+	// 	// if there are duplicating values - then iterate the left pointer up by 1 and the right pointer up by 1
+	// 	if (right + 1 < str.length) {
+	// 		left++
+	// 		right++
+	// 		repeatCounter = 0
 			
-			// use window pattern to eliminate the earlier characters and add later characters to container
+	// 		// use window pattern to eliminate the earlier characters and add later characters to container
 
-			var charToEliminate = str.charAt(left-1)
-			var charToAdd = str.charAt(right)
+	// 		var charToEliminate = str.charAt(left-1)
+	// 		var charToAdd = str.charAt(right)
 
-			if (container[charToEliminate] > 1 ) {
-				container[charToEliminate]--
-			} else if (container[charToEliminate] === 1) {
-				delete container[charToEliminate];
-			}
+	// 		if (container[charToEliminate] > 1 ) {
+	// 			container[charToEliminate]--
+	// 		} else if (container[charToEliminate] === 1) {
+	// 			delete container[charToEliminate];
+	// 		}
 
-			// check for repeats
+	// 		// check for repeats
 
-		} else {
-			distance--
-			left = 0
-			right = left + distance
-		}
+	// 	} else {
+	// 		distance--
+	// 		left = 0
+	// 		right = left + distance
+	// 	}
 
-	}
-	console.log ("finished", 1)
-	// check if there is repeated characters
-
-		// create an object
-
-
-
-		// when the right pointer reaches end of the string then reset left to 0 and right pointer to one position to the left of original right position
-
-}
+	// }
