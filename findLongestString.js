@@ -11,6 +11,41 @@ findLongestSubstring("bbbbbb") // 1
 findLongestSubstring("substring") // 8
 
 
+
+// set a left pointer at 0, distance at full length of string, right pointer at length
+
+// iterate between left and right pointer
+
+// create an object with keys being the chars from the string
+
+// if left starts at 0, then set the keys as chars from string, property as frequency of letter
+
+// start counter of all unique chars
+
+// start counter of all actual chars
+
+// if counter of all unique chars < counter of all actual chars - then it is not longest sub string
+
+// if not longest sub string, then move left pointer to left by 1, and right by 1. If right pointer is at end of the string, reset left to 0, distance reduce by 1, right = left + distance
+
+	// reduce the counter of actual chars by 1
+
+	// if the counter of the chars removed from left is 0 (eg it was a unique char), then reduce the delete the key, and reduce the unique chars obj
+
+	// then add the counter of actual chars by 1, then add the chars of the right pointer
+
+	// check for unique chars
+
+
+
+
+
+
+
+
+
+
+
 function findLongestSubstring(str) {
 
 
