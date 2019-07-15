@@ -13,6 +13,8 @@ findLongestSubstring("substring") // 8
 
 function findLongestSubstring(str) {
 
+
+
 	// if length of string is 0 then return 0
 
 	if (str.length === 0 || !str.length) {
