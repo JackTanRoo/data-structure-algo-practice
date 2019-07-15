@@ -1,14 +1,14 @@
-// findLongestSubstring("") // 0
+findLongestSubstring("") // 0
 
 findLongestSubstring("rithmschool") // 7
 
-// findLongestSubstring("thisisawesome") // 6
+findLongestSubstring("thisisawesome") // 6
 
-// findLongestSubstring("thecatinthehat") // 7
+findLongestSubstring("thecatinthehat") // 7
 
-// findLongestSubstring("bbbbbb") // 1
+findLongestSubstring("bbbbbb") // 1
 
-// findLongestSubstring("substring") // 8
+findLongestSubstring("substring") // 8
 
 
 
@@ -37,12 +37,6 @@ findLongestSubstring("rithmschool") // 7
 	// then add the counter of actual chars by 1, then add the chars of the right pointer
 
 	// check for unique chars
-
-
-
-
-
-
 
 
 
@@ -89,7 +83,7 @@ function findLongestSubstring(str) {
 
 
 		if (left === 0) {
-
+			console.log(left, right, str.charAt(left), str.charAt(right), str, distance, container, totalCharsCounter, uniqueCharsCounter)
 			for (var i = left; i <= right; i ++) {
 				character = str.charAt(i);
 
@@ -113,8 +107,8 @@ function findLongestSubstring(str) {
 			// check if unique string
 
 			if (totalCharsCounter === uniqueCharsCounter) {
-				console.log ("longest unique string", str, container, str.length)
-				return str.length
+				console.log ("longest unique string", str, Object.keys(container).length)
+				return Object.keys(container).length
 			}
 		}
 
@@ -155,8 +149,8 @@ function findLongestSubstring(str) {
 			// check if unique string
 
 			if (totalCharsCounter === uniqueCharsCounter) {
-				console.log ("longest unique string", str, container, str.length)
-				return str.length
+				console.log ("longest unique string", str, Object.keys(container).length)
+				return Object.keys(container).length
 			}
 
 		}
@@ -168,6 +162,8 @@ function findLongestSubstring(str) {
 			container = {}
 			distance --
 			right = left + distance;
+			totalCharsCounter = 0;
+			uniqueCharsCounter = 0;
 		}
 
 	}
