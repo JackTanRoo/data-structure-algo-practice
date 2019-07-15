@@ -69,8 +69,80 @@ function findLongestSubstring(str) {
 	// iterate from left to right for the string
 	var container = {};
 	var character;
-	var i;
-	var repeatCounter = 0
+
+
+	// start counter of all unique chars
+	// start counter of all actual chars
+
+	var totalCharsCounter = 0;
+	var uniqueCharsCounter = 0;
+
+	// set a left pointer at 0, distance at full length of string, right pointer at length
+
+
+		
+
+		// if left starts at 0, then set the keys as chars from string, property as frequency of letter
+
+
+		if (left === 0) {
+
+			for (var i = left; i <= right; i ++) {
+				character = str.charAt(i);
+
+				// each str character becomes a key in the object if there no existing key
+
+				if (!container[character]) {
+					
+					container[character] = 1;
+					uniqueCharsCounter++;
+					totalCharsCounter++;
+				
+				} else {
+					
+					container[character] ++;
+					totalCharsCounter++;
+				
+				}
+
+			}
+
+			// check if unique string
+
+			if (totalCharsCounter === uniqueCharsCounter) {
+				console.log ("longest unique string", str, container, str.length)
+				return str.length
+			}
+		}
+
+		// if counter of all unique chars < counter of all actual chars - then it is not longest sub string
+
+		// if not longest sub string, then move left pointer to left by 1, and right by 1. 
+
+		if (right + 1 < str.length) {
+			left++
+			right++
+
+
+
+		}
+
+		// If right pointer is at end of the string, reset left to 0, distance reduce by 1, right = left + distance
+
+
+	
+
+		// reduce the counter of actual chars by 1
+
+		// if the counter of the chars removed from left is 0 (eg it was a unique char), then reduce the delete the key, and reduce the unique chars obj
+
+		// then add the counter of actual chars by 1, then add the chars of the right pointer
+
+		// check for unique chars
+
+
+
+
 
 	while (right - left >=0 && right < str.length) {
 	
