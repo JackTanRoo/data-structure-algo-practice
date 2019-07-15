@@ -15,4 +15,15 @@ It gets across three points:
 
 There are some questions that may be inherently recursive and that some questions are easier to solve recursively.
 The question I am asking ("what row am I in?") can be rephrased recursively as: "how many people are in front of me + 1?" with a base case of zero people in front of me.
-It also illustrates the idea of a recursive call stack and how calls are pushed on then popped off the stack.
+It also illustrates the idea of a recursive call stack and how calls are pushed on then popped off the stack
+
+
+TWO ESSENTIAL PARTS OF THE RECURSIVE FUNCTION
+
+1) BASE CASE - end case
+2) Different input - the recursive call with a different piece of data each setTimeout(function() {}, 
+
+TIPS
+
+1 - always find the "layer" and "core", e.g. for 4 factorial. this is equal to 4 x factorial of 3. 3 factorial = 3 x factorial of 2
+2 - therefore the layer is the 4,3,2 which can be peeled off. the core is the factorial function that can be repeated with diff input
