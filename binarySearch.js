@@ -17,7 +17,7 @@ function binarySearch(array, num) {
 	var mid
 	// while left is smaller than right
 
-	while (left <= right) {
+	while (left < right) {
 		mid = Math.round((left + right) / 2)
 
 		if (array[mid] === num){
@@ -25,12 +25,12 @@ function binarySearch(array, num) {
 		}
 
 		if (num < array[mid]) {
-			right = mid
+			right = mid - 1
 		}
 
 		if (num > array[mid]) {
-			left = mid
-		}		
+			left = mid + 1
+		}
 
 	}
 
