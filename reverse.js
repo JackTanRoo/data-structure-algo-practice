@@ -1,7 +1,7 @@
 // reverse function that accepts a string and returns a new string in reverse
 
 console.log(reverse("awesome")) // emosema
-console.log(reverse("whatisgood")) // doogsitahw
+console.log(reverse("whatisgood")) // doogsitahw  
 
 
 function reverse(str) {
