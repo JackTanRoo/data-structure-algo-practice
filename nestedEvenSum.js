@@ -10,21 +10,31 @@ function nestedEvenSum (obj) {
 
   // create array of keys
 
-  var index = Object.keys(obj)
+
+  // function helpSum (obj) {
+  //   var index = Object.keys(obj)
+
+    for (var i in obj) {
+
+
+      if (typeof obj[i] === "object") {
+        result = result + nestedEvenSum(obj[i])
+      }
+
+      if (obj[i] % 2 === 0 && typeof obj[i] === 'number') {
+        result = result + obj[i];
+      } 
+
+
+    }
+
+    // return result
+
+  // }
 
   // iterate through object using keys
 
-  for (var i = 0; i < index.length; i++) {
-
-    if (obj[index[i]] % 2 === 0) {
-      result = result + obj[index[i]];
-    } 
-
-    if (typeof obj[index[i]] === "object") {
-      return result + nestedEvenSum(obj[index[i]])
-    }
-
-  }
+  // result = helpSum(obj)
 
   return result
 
