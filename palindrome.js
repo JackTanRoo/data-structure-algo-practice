@@ -14,6 +14,14 @@ console.log(isPalindrome('amanaplanacanalpandemonium')) // false
 // console.log(reverse("awesome")) // emosema
 // console.log(reverse("whatisgood")) // doogsitahw  
 
+function isPalindrome(str) {
+	if (str === reverse(str)) {
+		return true
+	}
+
+	return false
+
+}
 
 function reverse(str) {
 	// if the string has 1 chars then return the char
