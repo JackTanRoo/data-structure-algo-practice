@@ -31,7 +31,7 @@ function binarySearch(array, num) {
 		if (num > array[mid]) {
 			left = mid + 1
 		}
-
+  
 	}
 
 	return -1 
