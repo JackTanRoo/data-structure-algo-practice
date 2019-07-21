@@ -11,6 +11,8 @@
 // 
 
 
+// o(N)
+
 console.log(bubbleSort([8,1,2,3,4,5,6,7])); // 1,2,3,4,5,6,7
 console.log(bubbleSort([8,7,6,5,4,3])); // 1,2,3,4,5,6,7
 
@@ -28,7 +30,7 @@ function bubbleSort(array) {
 	while (end > 0) {
 
 		// iterates through array
-
+		var isSwap = false;
 		for (var i = 0; i < array.length-1; i ++) {
 			var temp = array[i];
 
@@ -37,10 +39,14 @@ function bubbleSort(array) {
 
 				array[i] = array[i+1];
 				array[i+1] = temp
+				isSwap = true
 			}
 		}
 
 		end--;
+		if (isSwap === false) {
+			break
+		}
 
 	}
 	// finish the loop when the end point is 0
