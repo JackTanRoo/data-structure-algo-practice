@@ -3,58 +3,96 @@
 // this is good when you need to keep a portion sorted and then there is real time data coming through
 
 console.log(insertionSort([8,1,2,3,4,5,6,7])); // 1,2,3,4,5,6,7
-console.log(insertionSort([8,7,6,5,4,3])); // 1,2,3,4,5,6,7
+console.log(insertionSort([1,7,6,5,4,3])); // 1,2,3,4,5,6,7
 
 
 // O(N^2) complexity
 
 function insertionSort(array) {
 
-	// create a pointer for which it represents the sorted part of the array
 
-	var sortedEnd = 0
+	// iterate through every item in the array
 
-	// start from the end of the array 
+	for (var i = 1; i < array.length; i++) {
 
-	for (var i = array.length - 1; i > 0; i--) {
-		// as you iterate to the left
+		// for every item
 
-		// move every element to the right
+		// check through all the previous items - each item called check item, insert into correct place
 
-		var temp = array[i]
+		var currentItem = array[i];
 
-		array[i+1] = temp
+		for (var j = i-1; j >= 0; j--) {
 
-		// save the 1 element into temp
+			// if current item is smaller than the check item
 
-		// and loop over the sorted part of the array and insert it
+			// move check item to the right by 1 place
 
-		for (var j = 0; j <= sortedEnd; j ++ ) {
-			if (temp >= array[j] && temp <= array [j+1]) {
-				array[j+1] = temp
+
+			if (array[j] >= currentItem) {
+				array[j+1] = array[j]
+			} else {
+				array[j+1] = currentItem
 			}
 
-			if (temp <= array[j] && temp >= array [j-1]) {
-				array[j+1] = temp
-			}
 		}
-
-		// then move the sortedEnd Pointer up by 1
-
-		sortedEnd++
-
 	}
+
 
 	
 
+	// insert into correct place by
 
 
 
-	// end the loop that moves to the left when it reaches the sorted End Pointer
+
+
+	// at the check item where the current value is greater than the check item, then check item + 1 is current value
+
 
 
 	return array
 }
+
+
+
+	// // create a pointer for which it represents the sorted part of the array
+
+	// var sortedEnd = 0
+
+	// // start from the end of the array 
+
+	// for (var i = array.length - 1; i > 0; i--) {
+	// 	// as you iterate to the left
+
+	// 	// move every element to the right
+
+	// 	var temp = array[i]
+
+	// 	array[i+1] = temp
+
+	// 	// save the 1 element into temp
+
+	// 	// and loop over the sorted part of the array and insert it
+
+	// 	for (var j = 0; j <= sortedEnd; j ++ ) {
+	// 		if (temp >= array[j] && temp <= array [j+1]) {
+	// 			array[j+1] = temp
+	// 		}
+
+	// 		if (temp <= array[j] && temp >= array [j-1]) {
+	// 			array[j+1] = temp
+	// 		}
+	// 	}
+
+	// 	// then move the sortedEnd Pointer up by 1
+
+	// 	sortedEnd++
+
+	// }
+
+	
+
+
 
 
 	// // have an sortedEnd pointer that starts at 0
