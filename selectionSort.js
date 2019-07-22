@@ -4,6 +4,8 @@
 
 // it places small values into sorted position
 
+// o(N^2) due to nested loops
+
 
 console.log(selectionSort([8,1,2,3,4,5,6,7])); // 1,2,3,4,5,6,7
 console.log(selectionSort([8,7,6,5,4,3])); // 1,2,3,4,5,6,7
