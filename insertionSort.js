@@ -31,10 +31,11 @@ function insertionSort(array) {
 			if (array[j] >= currentItem) {
 				array[j+1] = array[j]
 			} else {
-				array[j+1] = currentItem
+				break;
 			}
 
 		}
+		array[j+1] = currentItem
 	}
 
 
