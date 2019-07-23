@@ -15,7 +15,7 @@
 
 // merge sorted arrays into larger arrays
 
-// O(N log N) - COMPLEXITY
+// O(N log N) - COMPLEXITY  -BEST GENERAL SORT ALGOS THAT DOES NOT TAKE INTO CONSIDERAITONOF THE DATA IS O OF N LOG N
 
 // STEP 1
 
