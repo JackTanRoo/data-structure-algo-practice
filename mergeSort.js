@@ -30,11 +30,25 @@ function merge(array1, array2) {
 
 	// define a pointer for array 1 and a pointer for array 2
 
+	var shortPointer = 0;
+
+	var longPointer = 0;
+
+	if (array1.length >= array2.length) {
+		var longArray = array1;
+		var shortArray = array2;
+	} else {
+		var longArray = array2;
+		var shortArray = array1;
+	}
 
 	// find the shorter array
 
 
 	// whilest pointerShort < length of shorter array
+
+
+
 
 
 		// if arrayShort[pointerShorter] <= arrayLong[pointerLonger]
