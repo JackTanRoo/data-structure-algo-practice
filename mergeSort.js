@@ -24,46 +24,60 @@
 
 console.log(merge([100,200], [1,2,3,5,6]))
 
+console.log(merge([1,2], [100,200,3,5,6]))
+
+
 function merge(array1, array2) {
-	var result = []
+	var result = [];
+
+	
 
 
-	// define a pointer for array 1 and a pointer for array 2
+	return result;
 
-	var shortPointer = 0;
-
-	var longPointer = 0;
-
-	if (array1.length >= array2.length) {
-		var longArray = array1;
-		var shortArray = array2;
-	} else {
-		var longArray = array2;
-		var shortArray = array1;
-	}
-
-	// find the shorter array
+}
 
 
-	// whilest pointerShort < length of shorter array
+// console.log("array")
+// 	// define a pointer for array 1 and a pointer for array 2
 
-	while (shortPointer < shortArray.length) {
-		// if arrayShort[pointerShorter] <= arrayLong[pointerLonger]
+// 	var shortPointer = 0;
 
-		// push arrayShort element to result + iterate pointer Shorter up by 1
+// 	var longPointer = 0;
 
-		if (shortArray[shortPointer] <= longArray[longPointer]) {
-			result.push(shortArray[shortPointer])
-			shortPointer++
-		} else {
-			result.push(longArray[longPointer])
-			longPointer++
-		}
-	}
+// 	var longArray
+// 	var shortArray
 
-	for (var i = longPointer; i < longArray.length; i++) {
-		result.push(longArray[longPointer])
-	}
+// 	if (array1.length >= array2.length) {
+// 		 longArray = array1;
+// 		 shortArray = array2;
+// 	} else {
+// 		 longArray = array2;
+// 		 shortArray = array1;
+// 	}
+
+// 	// find the shorter array
+
+
+// 	// whilest pointerShort < length of shorter array
+
+// 	while (shortPointer < shortArray.length) {
+// 		// if arrayShort[pointerShorter] <= arrayLong[pointerLonger]
+
+// 		// push arrayShort element to result + iterate pointer Shorter up by 1
+
+// 		if (shortArray[shortPointer] <= longArray[longPointer]) {
+// 			result.push(shortArray[shortPointer]);
+// 			shortPointer++;
+// 		} else {
+// 			result.push(longArray[longPointer]);
+// 			longPointer++;
+// 		}
+// 	}
+
+// 	for (var i = longPointer; i < longArray.length; i++) {
+// 		result.push(longArray[longPointer])
+// 	}
 
 
 
@@ -72,9 +86,3 @@ function merge(array1, array2) {
 	// loop over LongerArray from pointerLong to end of LongerArray
 
 		// push the remaining elments into the result array
-
-
-
-	return result;
-
-}
