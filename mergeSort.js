@@ -15,14 +15,14 @@
 
 // merge sorted arrays into larger arrays
 
-
+// O(N log N)
 
 // STEP 1
 
 // implement merge - which takes 2 sorted arrays, then creates joint result array of sorted elements
 
 
-merge([100,200], [1,2,3,5,6])
+console.log(merge([100,200], [1,2,3,5,6]))
 
 function merge(array1, array2) {
 	var result = []
@@ -47,13 +47,25 @@ function merge(array1, array2) {
 
 	// whilest pointerShort < length of shorter array
 
-
-
-
-
+	while (shortPointer < shortArray.length) {
 		// if arrayShort[pointerShorter] <= arrayLong[pointerLonger]
 
 		// push arrayShort element to result + iterate pointer Shorter up by 1
+
+		if (shortArray[shortPointer] <= longArray[longPointer]) {
+			result.push(shortArray[shortPointer])
+			shortPointer++
+		} else {
+			result.push(longArray[longPointer])
+			longPointer++
+		}
+	}
+
+	for (var i = longPointer; i < longArray.length; i++) {
+		result.push(longArray[longPointer])
+	}
+
+
 
 		// else push arrayLong element to result + iterate pointer Longer up by 1
 
