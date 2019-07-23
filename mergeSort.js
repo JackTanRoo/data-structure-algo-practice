@@ -27,6 +27,51 @@ console.log(merge([100,200], [1,2,3,5,6]))
 console.log(merge([1,2], [3,5,6, 100,200]))
 
 
+console.log(mergeSort([1,54,1,23,2,54542,123]))
+
+function mergeSort(array) {
+
+	// use recursion to break up array into halves
+
+	var result = []
+
+	if (array.length === 1) {
+		return array;
+	}
+
+	var mid = Math.round(array.length/2)
+
+	var left = mergeSort(array.slice(0, mid))
+	var right = mergeSort(array.slice(mid))
+
+	return merge(left, right)
+
+
+
+
+};
+
+
+// function split(array) {
+// 	var result = []
+
+// 	if (array.length === 1) {
+// 		return array;
+// 	}
+
+// 	var mid = Math.round(array.length/2)
+
+// 	var left = split(array.slice(0, mid))
+// 	var right = split(array.slice(mid))
+
+// 	return JSON.stringify([left, right])
+// }
+
+
+
+
+
+
 function merge(array1, array2) {
 	var result = [];
 
