@@ -24,14 +24,49 @@
 
 console.log(merge([100,200], [1,2,3,5,6]))
 
-console.log(merge([1,2], [100,200,3,5,6]))
+console.log(merge([1,2], [3,5,6, 100,200]))
 
 
 function merge(array1, array2) {
 	var result = [];
 
-	
 
+
+	// whilst array1 and array2 length is not 0
+
+	while (array1.length > 0 && array2.length > 0) {
+
+		if (array1[0] <= array2[0]) {
+			result.push(array1[0]);
+			array1.shift()
+		} else {
+			result.push(array2[0]);
+			array2.shift();
+		}
+
+
+	}
+	// compare first element of array1 and array2
+
+
+	// push the smaller one into the result array
+
+
+	// pop it out of the array
+
+	// determine the longer array
+
+	if (array1.length >= array2.length) {
+		 var longArray = array1;
+		 var shortArray = array2;
+	} else {
+		 var longArray = array2;
+		 var shortArray = array1;
+	}
+
+	for (var i = 0; i < longArray.length; i++) {
+		result.push(longArray[i])
+	}
 
 	return result;
 
