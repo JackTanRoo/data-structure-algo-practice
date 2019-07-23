@@ -15,7 +15,7 @@
 
 // merge sorted arrays into larger arrays
 
-// O(N log N)
+// O(N log N) - COMPLEXITY
 
 // STEP 1
 
