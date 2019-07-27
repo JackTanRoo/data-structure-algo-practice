@@ -37,3 +37,54 @@
 // pivot index is basically the number of elements that is smaller than the pivot
 
 // then you swap the pivot and the element at the pivot index
+
+
+console.log(pivot([4,8,2,1,5,7,6,3])) // 3
+
+
+function pivot(array, start, end) {
+
+	var start = start ? start : 0
+	var end = end ? end : array.length-1
+
+	// console.log(start, end)
+
+	// select a pivot as first element
+	var pivotIndex = 0;
+
+	var pivot = array[0];
+
+	// create a pivot index starting at 0
+
+	// iterate through the array
+
+	// if the pivot is greater than the current element, swap the element at the pivot index +1 with the current element
+	var currentElement
+
+	for (var i = start + 1; i <= end; i ++) {
+		currentElement = array[i]
+
+		if ( currentElement <= pivot) {
+
+
+			var pivotIndexElementToSwap = array[pivotIndex + 1]
+			array[pivotIndex + 1] = currentElement;
+			array[i] = pivotIndexElementToSwap
+
+			// then increment the pivot index up by 1
+
+			pivotIndex++
+			console.log(currentElement, pivotIndex, array)
+
+
+		}
+	}
+
+
+	// at the end of the iteration swap the pivot and the element at the current index
+
+	array[0] = array[pivotIndex];
+	array[pivotIndex] = pivot;
+
+	return pivotIndex
+}
