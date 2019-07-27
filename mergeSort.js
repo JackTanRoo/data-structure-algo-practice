@@ -46,30 +46,9 @@ function mergeSort(array) {
 
 	return merge(left, right)
 
-
-
-
 };
 
-
-// function split(array) {
-// 	var result = []
-
-// 	if (array.length === 1) {
-// 		return array;
-// 	}
-
-// 	var mid = Math.round(array.length/2)
-
-// 	var left = split(array.slice(0, mid))
-// 	var right = split(array.slice(mid))
-
-// 	return JSON.stringify([left, right])
-// }
-
-
-
-
+ 
 
 
 function merge(array1, array2) {
