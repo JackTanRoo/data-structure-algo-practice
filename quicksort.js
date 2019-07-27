@@ -39,22 +39,45 @@
 // then you swap the pivot and the element at the pivot index
 
 
-console.log(pivot([4,8,2,1,5,7,6,3])) // 3
-console.log(pivot([9,8,2,1,5,7,6,3])) // 7
+// note because everthiung is being operated on in place
+
+// you dont check if the array length is 0 as the base case
+
+// you check if the distance between start and end is 0
 
 
+console.log(quickSort([4,8,2,1,5,7,6,3])) // 3
+// console.log(quickSort([9,8,2,1,5,7,6,3])) // 7
 
-function pivot(array, start = 0, end = array.length - 1) {
 
+function quickSort(array, left, right) {
+	var left = left ? left : 0;
+	var right = right ? right : array.length-1;
+
+	if ( left < right ) {
+
+		let pivotIndex = pivot(array, left, right)
+
+		quickSort(array, left, pivotIndex - 1 )
+		quickSort(array, pivotIndex + 1, right )
+
+	}
+	return array
+}
+
+function pivot(array, start = 0, end=array.length-1) {
 	// var start = start ? start : 0
 	// var end = end ? end : array.length-1
 
 	// console.log(start, end)
 
 	// select a pivot as first element
-	var pivotIndex = 0;
+	var pivotIndex = start;
 
-	var pivot = array[0];
+	var swap = array[start];
+
+
+	// console.log(start, end, array, pivotIndex, swap)
 
 	// create a pivot index starting at 0
 
@@ -62,21 +85,23 @@ function pivot(array, start = 0, end = array.length - 1) {
 
 	// if the pivot is greater than the current element, swap the element at the pivot index +1 with the current element
 	var currentElement
+	var pivotIndexElementToSwap
 
-	for (var i = start + 1; i <= end; i ++) {
+	for (var i = start + 1; i < end + 1; i ++) {
 		currentElement = array[i]
 
-		if ( currentElement <= pivot) {
+		if ( currentElement <= swap) {
 
+			pivotIndexElementToSwap = array[pivotIndex + 1]
+			// console.log(currentElement, pivotIndexElementToSwap)
 
-			var pivotIndexElementToSwap = array[pivotIndex + 1]
 			array[pivotIndex + 1] = currentElement;
 			array[i] = pivotIndexElementToSwap
 
 			// then increment the pivot index up by 1
 
 			pivotIndex++
-			console.log(currentElement, pivotIndex, array)
+			// console.log(currentElement, pivotIndex, array)
 
 
 		}
@@ -86,7 +111,7 @@ function pivot(array, start = 0, end = array.length - 1) {
 	// at the end of the iteration swap the pivot and the element at the current index
 
 	array[0] = array[pivotIndex];
-	array[pivotIndex] = pivot;
+	array[pivotIndex] = swap;
 
-	return [pivotIndex, array]
+	return pivotIndex
 }
