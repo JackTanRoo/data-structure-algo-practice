@@ -40,12 +40,14 @@
 
 
 console.log(pivot([4,8,2,1,5,7,6,3])) // 3
+console.log(pivot([9,8,2,1,5,7,6,3])) // 7
 
 
-function pivot(array, start, end) {
 
-	var start = start ? start : 0
-	var end = end ? end : array.length-1
+function pivot(array, start = 0, end = array.length - 1) {
+
+	// var start = start ? start : 0
+	// var end = end ? end : array.length-1
 
 	// console.log(start, end)
 
@@ -86,5 +88,5 @@ function pivot(array, start, end) {
 	array[0] = array[pivotIndex];
 	array[pivotIndex] = pivot;
 
-	return pivotIndex
+	return [pivotIndex, array]
 }
