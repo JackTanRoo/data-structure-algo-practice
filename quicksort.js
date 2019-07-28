@@ -47,7 +47,7 @@
 
 
 console.log(quickSort([4,8,2,1,5,7,6,3])) // 3
-// console.log(quickSort([9,8,2,1,5,7,6,3])) // 7
+console.log(quickSort([9,8,2,1,5,7,6,3])) // 7
 
 
 function quickSort(array, left, right) {
@@ -65,6 +65,16 @@ function quickSort(array, left, right) {
 	return array
 }
 
+
+function swap(array, from, to) {
+	var temp = array[from]
+
+	array[from] = array[to]
+
+	array[to] = temp
+	return array;
+}
+
 function pivot(array, start = 0, end=array.length-1) {
 	// var start = start ? start : 0
 	// var end = end ? end : array.length-1
@@ -74,7 +84,7 @@ function pivot(array, start = 0, end=array.length-1) {
 	// select a pivot as first element
 	var pivotIndex = start;
 
-	var swap = array[start];
+	var pivot = array[start];
 
 
 	// console.log(start, end, array, pivotIndex, swap)
@@ -90,28 +100,18 @@ function pivot(array, start = 0, end=array.length-1) {
 	for (var i = start + 1; i < end + 1; i ++) {
 		currentElement = array[i]
 
-		if ( currentElement <= swap) {
-
-			pivotIndexElementToSwap = array[pivotIndex + 1]
-			// console.log(currentElement, pivotIndexElementToSwap)
-
-			array[pivotIndex + 1] = currentElement;
-			array[i] = pivotIndexElementToSwap
-
-			// then increment the pivot index up by 1
+		if ( currentElement <= pivot) {
 
 			pivotIndex++
-			// console.log(currentElement, pivotIndex, array)
-
+			swap(array, pivotIndex, i)
 
 		}
 	}
 
-
 	// at the end of the iteration swap the pivot and the element at the current index
 
-	array[0] = array[pivotIndex];
-	array[pivotIndex] = swap;
+	array[start] = array[pivotIndex];
+	array[pivotIndex] = pivot;
 
 	return pivotIndex
 }
