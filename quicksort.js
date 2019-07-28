@@ -110,8 +110,9 @@ function pivot(array, start = 0, end=array.length-1) {
 
 	// at the end of the iteration swap the pivot and the element at the current index
 
-	array[start] = array[pivotIndex];
-	array[pivotIndex] = pivot;
+	swap(array, start, pivotIndex)
+	// array[start] = array[pivotIndex];
+	// array[pivotIndex] = pivot;
 
 	return pivotIndex
 }
