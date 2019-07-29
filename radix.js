@@ -43,3 +43,16 @@ function digitCount (num) {
 	return Math.floor(Math.log10(Math.abs(num))) + 1;
 
 }
+
+function mostDigits(num) {
+// given an array of number return the nummber of the digits for the largest number in the array
+
+	let maxDigits = 0;
+
+	for (let i = 0; i < num.length; i++) {
+		maxDigits = Math.max(maxDigits, digitCount(num[i]))
+	}
+
+	return maxDigits;
+
+}
