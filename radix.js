@@ -13,6 +13,12 @@
 // then do it until the number with highest number of digits
 
 
+// HELPER FUNCTIONS
+
+// 	get digits - getDigit
+//  find number of digits = digitCount
+//  find num with maxDigits
+
 
 // FIRST HELPER FUNCTION
 
@@ -28,3 +34,12 @@ function getDigit (num, i) {
 
 // for 7323
 // = 7323 / 100 = 73.23 = 73 (because of Math.floor) = 3 (remainder after dividing by 10)
+
+function digitCount (num) {
+// what number to power of base 10 will give us the number
+
+	if (num === 0) { return 1 }
+
+	return Math.floor(Math.log10(Math.abs(num))) + 1;
+
+}
