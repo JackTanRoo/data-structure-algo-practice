@@ -71,3 +71,22 @@ function mostDigits(num) {
 
 // replace our existing array with values in our buckets starting with 0 and going up to 9
 // return list at the end
+
+function radixSort(nums){
+    let maxDigitCount = mostDigits(nums);
+    for(let k = 0; k < maxDigitCount; k++){
+        let digitBuckets = Array.from({length: 10}, () => []);
+        for(let i = 0; i < nums.length; i++){
+            let digit = getDigit(nums[i],k);
+            digitBuckets[digit].push(nums[i]);
+        }
+        nums = [].concat(...digitBuckets);
+    }
+    return nums;
+}
+
+radixSort([23,345,5467,12,2345,9852])
+
+// BIG O = 
+// TIME COMPLEXITY = O(NK) - k is the num digits of the largest  number - so the numbers can get very large and high character count, then need to keep in mind
+// space complexity = O(n+K)
