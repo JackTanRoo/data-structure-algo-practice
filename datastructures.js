@@ -43,3 +43,5 @@ console.log(firstStudent.fullName())
 // e.g. when array.push(xxx); push acts on the single instances
 
 // does not work on the class level
+
+// use static constuctor to create class methods
