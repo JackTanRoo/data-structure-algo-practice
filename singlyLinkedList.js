@@ -93,7 +93,7 @@ class SinglyLinkedList {
 
 		// otherwise iterate through every element in the list
 		var current = this.head
-		var previous\
+		var previous
 
 		while (current.next) {
 
@@ -123,6 +123,37 @@ class SinglyLinkedList {
 
 		return current;
 
+	}
+
+	// shift - remove first element to the list
+
+
+	shift () {
+		// if there are no nodes, then return undefined
+
+		if (!this.head) {
+			return undefined
+		}
+
+		// else take the head, store it in a variable - oldhead
+
+		var oldHead = this.head
+
+		// head.next -> assign this to head
+
+		this.head = oldHead.next
+
+		// reduce length by 1
+
+		this.length--
+
+		// if length = 0, then set this.tail to null
+		if (this.length === 0) {
+			this.tail = null
+		}
+		// return old head
+
+		return oldHead
 	}
 
 
