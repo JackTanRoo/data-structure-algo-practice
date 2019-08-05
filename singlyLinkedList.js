@@ -201,13 +201,23 @@ class SinglyLinkedList {
 
 	// check if index is valid
 
-	if (index < 0 || index  >= this.length) return null
+		if (index < 0 || index  >= this.length) return null
 
-	var currentNode = this.head;
-	for (var counter = 1; counter <= index; counter++) {
-		currentNode = currentNode.next
+		var currentNode = this.head;
+		for (var counter = 1; counter <= index; counter++) {
+			currentNode = currentNode.next
+		}
+		return currentNode
 	}
-	return currentNode
+
+	set (index, val) {
+		var foundNode = this.get (index)
+		if (foundNode) {
+			foundNode.val = val;
+			return true;
+		}
+		return false;
+	}
 }
 
 
