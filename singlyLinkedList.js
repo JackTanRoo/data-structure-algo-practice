@@ -18,6 +18,12 @@
 // insertion and deletion can be expensive
 // can be 	quickly accessed at a specific index
 
+// pop - remove last element
+
+// push - add item to the end
+
+
+
 class Node {
 	constructor (val){
 		this.val = val;
@@ -71,4 +77,53 @@ class SinglyLinkedList {
 
 		return this;
 	}
+
+	pop(){
+		// if the tail is null then return undefined
+		if (!this.tail) {
+			return undefined
+		}
+
+		if (length === 1) {
+			this.head = null;
+			this.tail = null;
+			this.length = 0;
+
+		}
+
+		// otherwise iterate through every element in the list
+		var current = this.head
+		var previous\
+
+		while (current.next) {
+
+			previous = current;
+			current = current.next
+
+		}
+		// track the current and previous element
+
+
+
+		// if the current element is the last element of the list
+
+		this.tail = previous
+		previous.next = null;
+		// delete current
+		this.length--
+		// delete the current element
+
+
+		// set this.tail to the previous element
+
+		// change the next proeprty of the previous element to null
+
+		// reduce length by 1
+
+
+		return current;
+
+	}
+
+
 }
