@@ -156,5 +156,62 @@ class SinglyLinkedList {
 		return oldHead
 	}
 
+	unshift (val) { // add node to the head
+		// accept a value
 
+		var newNode = new Node (val)
+		// create a node from that value
+
+		if (!this.head) {
+			this.head = newNode;
+			this.tail = newNode;
+		}
+
+		// set the current head as next value in the node
+
+		var currentHead = this.head;
+
+		this.head = newNode
+
+		newNode.next = currentHead
+
+		this.length ++;
+
+		// set the current head as the current node
+
+		// increment length by 1
+
+		// if the length = 1
+
+		// then set the tail as the current head
+
+		return this
+	};
+
+	// traverses the index and returns the node at the index
+	// not efficient, as have to traverse the whole linked list
+	get (index) {
+
+	// accepts an index
+
+	// loops up to the index
+
+	// returns node at the index
+	// var counter=0;
+
+	// check if index is valid
+
+	if (index < 0 || index  >= this.length) return null
+
+	var currentNode = this.head;
+	for (var counter = 1; counter <= index; counter++) {
+		currentNode = currentNode.next
+	}
+	return currentNode
 }
+
+
+
+
+
+
