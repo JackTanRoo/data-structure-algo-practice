@@ -269,19 +269,48 @@ class SinglyLinkedList {
 	}
 
 	remove (index) {
-		remove the node at an index at less than zero or greater than length return undefined
+		// remove the node at an index at less than zero or greater than length return undefined
 
-		if index is same as length -1 pop node
+		// if index is same as length -1 pop node
 
-		if index is at 0, shift
+		// if index is at 0, shift
 
-		if index is in the middle
+		// if index is in the middle
 
-		get prevNode, change next element to the node after index
+		// get prevNode, change next element to the node after index
 
-		increment length down by 1
+		// increment length down by 1
 
-	}
+		// return value of node removed
+
+		var temp
+
+		if (index < 0 || index >= this.length) {
+			return undefined;
+		}
+
+		if (index === this.length - 1) {
+			 temp = this.pop().next
+			 return temp.val
+		}
+
+		if (index === 0 ){ 
+			 temp = this.shift()
+			 return temp.val
+
+		} else {
+
+			var prevNode = this.get(index - 1);
+			var currentNode = prevNode.next;
+			var nextNode = currentNode.next
+
+			prevNode.next = nextNode;
+			this.length --
+			return currentNode.val;
+		}
+
+
+	}	
 
 }
 
