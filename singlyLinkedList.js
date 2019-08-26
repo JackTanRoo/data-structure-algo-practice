@@ -269,8 +269,18 @@ class SinglyLinkedList {
 	}
 
 	remove (index) {
+		remove the node at an index at less than zero or greater than length return undefined
 
-		
+		if index is same as length -1 pop node
+
+		if index is at 0, shift
+
+		if index is in the middle
+
+		get prevNode, change next element to the node after index
+
+		increment length down by 1
+
 	}
 
 }
