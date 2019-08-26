@@ -223,6 +223,49 @@ class SinglyLinkedList {
 		}
 		return false;
 	}
+
+	// accepts an index and a val
+
+	// if index is less than zero or greater than the length, return false
+	
+	// if index is same as the length, push the new node to the end of the list
+
+	// if the index is 0, unshift a new node to the start of the list
+
+	// otherwise, using the get methodm access the node at start of index -1 		
+
+	// set the next property on taht new node to be the new node
+	// set the next property on the new node to be the previous next
+	// increment the length
+	// return true
+	insert (index, val) {
+		let node = new Node (val);
+
+		if (index < 0 || index > this.length) {
+			return false;
+		}
+
+		if (index === this.length) {
+			return this.push(val)
+		}
+
+		if (index === 0 ){ 
+			return this.unshift(val)
+		} else {
+
+			var prevNode = this.get(index - 1);
+			var currentNode = this.get(index)
+
+			prevNode.next = node;
+			node.next = currentNode;
+
+		}
+
+
+		this.length ++ 
+		return true;
+	}
+
 }
 
    
