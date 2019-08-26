@@ -309,8 +309,12 @@ class SinglyLinkedList {
 			return currentNode.val;
 		}
 
-
 	}	
+
+	reverse () {
+		
+	}
+
 
 }
 
