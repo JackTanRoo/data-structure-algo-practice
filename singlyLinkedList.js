@@ -211,6 +211,11 @@ class SinglyLinkedList {
 	}
 
 	set (index, val) {
+
+		// finds value at index
+		// sets to new value when it is found
+		// if it is not found, then return false
+
 		var foundNode = this.get (index)
 		if (foundNode) {
 			foundNode.val = val;
