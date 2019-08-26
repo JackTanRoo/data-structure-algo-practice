@@ -246,11 +246,13 @@ class SinglyLinkedList {
 		}
 
 		if (index === this.length) {
-			return this.push(val)
+			 this.push(val)
+			 return true
 		}
 
 		if (index === 0 ){ 
-			return this.unshift(val)
+			 this.unshift(val)
+			 return true
 		} else {
 
 			var prevNode = this.get(index - 1);
@@ -258,12 +260,17 @@ class SinglyLinkedList {
 
 			prevNode.next = node;
 			node.next = currentNode;
-
+			this.length ++ 
+			return true;
 		}
 
 
-		this.length ++ 
-		return true;
+
+	}
+
+	remove (index) {
+
+		
 	}
 
 }
