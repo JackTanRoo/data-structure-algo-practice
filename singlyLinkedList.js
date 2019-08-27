@@ -312,6 +312,9 @@ class SinglyLinkedList {
 	}	
 
 	reverse () {
+		// reverses the elements in a singly linked list in place
+		// no new list created
+
 		
 	}
 
