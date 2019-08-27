@@ -23,6 +23,13 @@
 // push - add item to the end
 
 
+// Big O notation
+
+// -- insertion - O(1) // this different to arrays as arrays are ON // but you have to iterate to get to the index, hence you it is ON to access, and O1 to insert
+// --- removal - ON // iterate to the index
+// ---- search - ON /// iterate to the index
+// ----- Access - ON // but arrays are O1 because you know the index
+
 
 class Node {
 	constructor (val){
