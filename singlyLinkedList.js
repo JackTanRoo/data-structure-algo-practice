@@ -315,7 +315,43 @@ class SinglyLinkedList {
 		// reverses the elements in a singly linked list in place
 		// no new list created
 
-		
+		// make the head -> the tail
+
+		// make the tail -> the head
+
+		// keep reference to original head
+
+		// iterate through the list starting from original head
+
+		// for each element
+
+		// save the current next of the current node
+
+		// make currentNode.next the previous element, start previous at null because head is the tail
+
+		// then move the current node to current next
+
+		// then move previoous to current node
+
+		var currentNode = this.head
+		this.head = this.tail
+		this.tail = node
+
+
+		var nextNode
+		var previousNode = null
+
+		for (var i = 0; i < this.length; i ++) {
+			nextNode = currentNode.next;
+
+			currentNode.next = previousNode;
+
+			previousNode = currentNode
+			currentNode = nextNode
+		}
+
+		return this
+
 	}
 
 
