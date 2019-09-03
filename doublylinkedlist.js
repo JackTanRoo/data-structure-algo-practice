@@ -18,7 +18,7 @@ class SinglyLinkedList {
 		this.tail = null;
 		this.length = 0;
 	
-	// push
+	// push - add a node to the end of the doubly linked list
 
 	// create new node with value passed in
 
@@ -47,6 +47,53 @@ class SinglyLinkedList {
 			this.length++
 			return this;
 		}
+
+	// pop - remove end of the doubly linked list and return it
+
+		// if length is 0, return null
+
+		// length increment down by 1
+
+		// else if length = 1
+			// save current head in temp
+
+			// set head and tail to null 
+
+			// return temp
+
+		// else 
+			// save tail as temp
+
+			// go to prev of tail and define next property on prev of tail as null
+
+			// update this.tail to prev
+
+			// return temp
+
+		pop(){
+			if (this.length === 0) { 
+				return null
+			}
+
+			this.length--;
+			var temp;
+
+			if (this.length === 1) {
+				temp = this.head
+				this.head = null;
+				this.tail = null
+				return temp
+			}
+
+			else {
+				temp = this.tail;
+				this.tail = temp.prev;
+				this.tail.next = null;
+				temp.prev = null
+			}
+			return temp
+		}
+
 	}
 }
 
