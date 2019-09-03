@@ -17,5 +17,33 @@ class SinglyLinkedList {
 		this.head = null;
 		this.tail = null;
 		this.length = 0;
+	
+	// push
+
+	// create new node with value passed in
+
+	// if the head is null  then set the head and tail to be newly created node
+
+	// if not, set 
+		// the next property on the tail to be that node and set the previous
+		// set the previous property of that node to be the old tail
+		// set the tail property to be that node
+		// increment length by 1
+
+	// return the entire list
+
+		push(val) {
+			var newNode = new Node(val)
+
+			if (!this.head) {
+				this.head = newNode
+				this
+
+			}
+
+			this.length++
+			return this;
+		}
 	}
 }
+
