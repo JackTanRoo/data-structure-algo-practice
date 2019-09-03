@@ -203,11 +203,32 @@ class SinglyLinkedList {
 			} else {
 				var currentNode = this.tail
 
-				for (var counter = this.length - 1 ; counter > index; counter++) {
+				for (var counter = this.length - 1 ; counter > index; counter--) {
 					currentNode = currentNode.prev
 				}
 				return currentNode
 			}
+		}
+
+
+		// set - takes index and val and update the node at the index with the value 
+		set (index, val) {
+			// get the node at the index and save into result
+
+			var result = get(index)
+
+			if (result) {
+				result.val = val;
+				return true;
+
+			} else {
+				return false
+			}
+
+			// update val of result with val, return true
+
+			// return false
+
 		}
 
 
