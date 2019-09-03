@@ -272,15 +272,62 @@ class SinglyLinkedList {
 
 				var newNode = new Node(val);
 
-				prevNode.next = newNode;
-				newNode.prev = prevNode
+				prevNode.next = newNode, newNode.prev = prevNode
 
-				nextNode.prev = newNode;
-				newNode.next = nextNode
+				nextNode.prev = newNode, newNode.next = nextNode
+				
 				this.length++
 			}
 
 			return true
+		}
+
+		// remove = remove item at index
+
+		// if index is below 0 or greater or equal to length, return undefined
+
+		// if index is 0, unshift
+
+		// if index is length - 1, pop
+
+		// else
+
+			// find currentNode at index
+
+			// find prevNode at index-1
+
+			// find nextNode at index + 1
+
+			// update prev and next values
+
+			// decrement length by 1
+
+			// return currentNode
+
+		remove(index) {
+
+			if (index < 0 || index >= this.length) {
+				return undefined
+			}
+
+			if (index === 0) {
+				return !!shift()
+			}
+
+			if (index === this.length-1) {
+				return !!pop()
+			}
+
+			var removeNode = this.get(index);
+			var prevNode = removeNode.prev;
+			var nextNode = removeNode.next;
+
+			prevNode.next = nextNode, nextNode.prev = prevNode;
+			removeNode.prev = null, removeNode.next = null;
+
+			this.length--;
+
+			return removeNode;
 		}
 
 	}
