@@ -134,6 +134,83 @@ class SinglyLinkedList {
 			this.length--
 			return head
 		}
+
+		// unshift
+
+		// add a node to the front of the list
+
+		// if length is 0, pop value
+
+		// else 
+
+			// create a newNode
+
+			// save oldHead as this.head
+
+			// oldHead.prev = newNode
+
+			// newNode.next = oldHead
+
+			// this.head = newNode
+
+		// return list
+
+
+		unshift(val){
+			if (this.length === 0) {
+				return this.push(val)
+			} else {
+				var newHead = new Node (val)
+
+				var oldHead = this.head
+
+				this.head = newHead;
+				newHead.next = oldHead;
+				oldHead.prev = newHead;	
+				this.length ++
+				return this
+			}
+		}
+
+		// get - access a node in a doubly linked list using its position
+
+		// if index is less than or equal to half of the length,
+		// start from the head
+		// create a for loop, starter a counter at 1, increment for each loop
+			// stop the loop when you reach index
+			// for each loop, assign the currentNode to currentNode.next
+			// at end of the loop return the currentNode
+
+		// if index is more than half then start from tail
+
+		get (index) {
+			// var counterEnd = 0;
+			// var counterIncrement;
+			// var counter;
+
+			if (index <0 || index >= this.length) {
+				return null
+			}
+
+			if (index <= this.length / 2 ) {
+				var currentNode = this.head
+
+				for (var counter = 0; counter < index; counter++) {
+					currentNode = currentNode.next
+				}
+				return currentNode
+
+			} else {
+				var currentNode = this.tail
+
+				for (var counter = this.length - 1 ; counter > index; counter++) {
+					currentNode = currentNode.prev
+				}
+				return currentNode
+			}
+		}
+
+
 	}
 }
 
