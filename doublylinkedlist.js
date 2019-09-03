@@ -37,8 +37,11 @@ class SinglyLinkedList {
 
 			if (!this.head) {
 				this.head = newNode
-				this
-
+				this.tail = newNode
+			} else {
+				this.tail.next = newNode
+				newNode.prev = this.tail
+				this.tail = newNode
 			}
 
 			this.length++
