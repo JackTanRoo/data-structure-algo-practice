@@ -231,6 +231,57 @@ class SinglyLinkedList {
 
 		}
 
+		// insert - takes an index and val, adds a new node at that index and val
+
+			// if index < 0 or longer than length, then return false
+
+			// if index is 0, unshift
+
+			// if index is same as length, push
+
+			// get node at current index -1, set to prevNode
+
+			// get ndoe at index, set to nextNode
+
+			// create newNode
+
+			// update next of prevNode to newNode, update prev of newNode to prevNode
+
+			// update prev of nextNode to newNodem update next of newNode to nextNode
+
+			// increment length by 1
+
+			// return list
+
+		insert (index, val) {
+			if (index < 0 || index > this.length) {
+				return false
+			}
+
+			if (index === 0 ) {
+				this.unshift(val)
+			}
+
+			if (index === this.length) { // you can still add at the end of the list
+				this.push(val)
+			}
+
+			else {
+				var prevNode = this.get(index-1)
+				var nextNode = prevNode.next;
+
+				var newNode = new Node(val);
+
+				prevNode.next = newNode;
+				newNode.prev = prevNode
+
+				nextNode.prev = newNode;
+				newNode.next = nextNode
+				this.length++
+			}
+
+			return true
+		}
 
 	}
 }
