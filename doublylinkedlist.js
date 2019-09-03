@@ -4,6 +4,19 @@
 // but more memory
 
 
+// Big o of Doubly Linked list
+// Insertion - O(1) - 
+
+// Removal - O(1) - not ON like singly linked list; but note that removal is a single operation and does not include searching
+
+// Searching - ON - just like Singly Linked List, but it is ON/2
+
+// Access - ON
+
+// Almost identical to singly linked list but there is additional pointer so takes more memory but more flexibility
+
+
+
 class Node {
 	constructor (val){
 		this.val = val;
