@@ -94,6 +94,46 @@ class SinglyLinkedList {
 			return temp
 		}
 
+		// shift - removes the node from the beginning
+
+		// if length is 0, return null
+
+		// same head as temp
+
+		// length increment down by 1
+
+		// if length = 1
+			// set head and tail to null 
+			// return temp
+
+		// else 
+			// go to next of temp and set this.head as the next of temp
+
+			// update this.head.prev to null
+			// update temp.next to null
+			// return temp
+
+
+		shift(){
+			var temp = this.head
+
+			if (!this.head) {
+				return undefined
+			}
+
+			if (this.length === 0) {
+				this.head = null;
+				this.tail = null
+			
+			} else {
+				this.head = temp.next;
+				this.head.prev = null;
+				temp.next = null;
+			}
+
+			this.length--
+			return head
+		}
 	}
 }
 
