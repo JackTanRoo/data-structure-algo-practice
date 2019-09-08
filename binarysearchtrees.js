@@ -41,20 +41,22 @@ class BinarySearchTree {
 			var current = this.root
 
 			while (continue) {
-				if (val <= current.value) {
+				if (val < current.value) {
 					if (!current.left) {
 						current.left = newNode
 						continue = false;
 					} else {
 						current = this.root.left
 					}
-				} else {
+				} else if (val > current.value) {
 					if (!current.value) {
 						current.right = newNode
 						continue = false;
 					} else {
 						current = this.root.right
 					}	
+				} else {
+					return undefined // for duplicated insertions
 				}
 			}
 		}
