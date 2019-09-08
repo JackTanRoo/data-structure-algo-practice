@@ -18,6 +18,8 @@ stack.pop()
 
 // linked list implementation - formal
 
+// BIG O OF STACKS - insertion is 0(1) and removal is O(1) - this the most important advantage of stack 
+
 
 class Node {
 	constructor (val){
@@ -60,6 +62,8 @@ class Stack {
 		}
 
 		this.first = temp.next
+		
+		this.size--
 
 		return temp;
 
