@@ -29,6 +29,38 @@ class BinarySearchTree {
 		this.root = null;
 	}
 
+	insert(val) {
+		var newNode = new Node (val)
+
+		var continue = true
+
+		if (!this.root) {
+			this.root = node;
+			return
+		} else {
+			var current = this.root
+
+			while (continue) {
+				if (val <= current.value) {
+					if (!current.left) {
+						current.left = newNode
+						continue = false;
+					} else {
+						current = this.root.left
+					}
+				} else {
+					if (!current.value) {
+						current.right = newNode
+						continue = false;
+					} else {
+						current = this.root.right
+					}	
+				}
+			}
+		}
+		return this;
+	}
+
 }
 
 
@@ -59,4 +91,12 @@ tree.root.right.left = new Node (1)
 
 // if no root then set the root as newNode
 
-// is the value of the newNode lesser
+// is the value of the newNode lesser than the value, then check if there is a value to the left of the root,
+
+// if no, then insert
+
+// if so, repeat
+
+// repeat for right side
+
+
