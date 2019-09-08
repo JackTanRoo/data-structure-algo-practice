@@ -22,3 +22,41 @@
 // rules about BST
 // each node only has 2 children at most, you can also only have 1
 // sorted - left side is smaller than the parent, right is bigger
+
+
+class BinarySearchTree {
+	constructor () {
+		this.root = null;
+	}
+
+}
+
+
+class Node {
+	constructor (val) {
+		this.value = val;
+		this.left = null;
+		this.right = null;
+	}
+}
+
+var tree = new BinarySearchTree()
+
+tree.root = new Node (10)
+tree.root.left = new Node (7)
+tree.root.right = new Node (14)
+
+tree.root.right.left = new Node (1)
+
+
+// insert
+
+// take a value 
+
+// create a new node with the value
+
+// start at the root 
+
+// if no root then set the root as newNode
+
+// is the value of the newNode lesser
