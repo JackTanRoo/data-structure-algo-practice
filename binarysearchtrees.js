@@ -63,6 +63,49 @@ class BinarySearchTree {
 		return this;
 	}
 
+	find(val) {
+		// if the value is at the root return the root
+
+		// else make currentNode the root
+
+		// if val is the root then return the root
+
+		// if val is less than the root
+
+		// 		then change the currentNode to root.left
+
+		// 		if there is no root left then return null
+
+		// 		repeat the cycle
+
+		// repeate the cycle for the right
+
+		var current = this.root;
+
+		var found = false
+
+		while (!found && current) {
+			if (!current.value) {
+				// found = true;
+				return null;
+			} 
+
+			if (val === current.value) {
+				found = true;
+				return current;
+			}
+
+			if (val < current.value) {
+				current = current.left
+			}
+
+			if (val > current.value) {
+				current = current.right
+			}
+		}
+
+		return false;
+	}
 }
 
 
