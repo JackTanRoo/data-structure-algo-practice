@@ -24,6 +24,11 @@
 // sorted - left side is smaller than the parent, right is bigger
 
 
+// INSERTION = O(LOG N) - BASE 2 - BUT NOT ALWAYS - IF IT IS JUST ONE SIDED TREE, THEN IT IS ON
+
+// SEARCHING - O LOG N - BASE 2
+
+
 class BinarySearchTree {
 	constructor () {
 		this.root = null;

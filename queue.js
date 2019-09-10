@@ -63,7 +63,7 @@ class Queue {
 			this.last = null
 		}
 
-		this.first = temp.next;
+		this.first = temp.next; 
 		this.size--;
 		return temp;
 	}
