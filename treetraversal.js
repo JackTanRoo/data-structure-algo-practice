@@ -77,7 +77,7 @@ class BinarySearchTree {
     }
 
     DFSPreOrder(){
-
+    	// visit the node first, the visit the left, then right
     	// create a variable to store the values of nodes visited
     	// store teh root of the BST in a node called current
 
@@ -101,6 +101,41 @@ class BinarySearchTree {
 	    	data.push(node.value)
 	    	if (node.left) { traverse(node.left) };
 	    	if (node.right) { traverse(node.right) };
+	    }
+
+    	traverse(this.root);
+    	return data
+
+    }
+
+    DFSPostOrder(){
+
+    	// go all the way to the left first, then right visit both, then visit the parent
+    	// 
+    	// create a variable to store the values of nodes visited
+    	// store teh root of the BST in a node called current
+
+    	// Write a helper function called current
+    	// 	if the node has a left property call the helper function with the left property on the node
+    	// 	if the node has a right property call the helper function with the right property on the node
+    	// 	push the value of the node to the variable that stores the values
+
+    	// invoke the helper function on the current variable
+
+    	// return the array of values
+
+    	var data = [];
+
+    
+	    function traverse(node) {
+	    	// if (!node.left && !node.right) {
+	    	// 	return data;
+	    	// } because this ends the tree early
+
+	    	if (node.left) { traverse(node.left) };
+	    	if (node.right) { traverse(node.right) };
+	    	data.push(node.value)
+
 	    }
 
     	traverse(this.root);
