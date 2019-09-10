@@ -90,19 +90,21 @@ class BinarySearchTree {
 
     	// return the array of values
 
-    	var visited = []
-    	visited = traverse(this.root, visited);
-    	return visited
+    	var data = [];
+
     
 	    function traverse(node) {
-	    	if (!node.left && !node.right) {
-	    		return visited;
-	    	}
+	    	// if (!node.left && !node.right) {
+	    	// 	return data;
+	    	// } because this ends the tree early
 
-	    	visited.push(node.value)
-	    	if (node.left) { visited = traverse(node.left) };
-	    	if (node.right) { visited = traverse(node.right) };
+	    	data.push(node.value)
+	    	if (node.left) { traverse(node.left) };
+	    	if (node.right) { traverse(node.right) };
 	    }
+
+    	traverse(this.root);
+    	return data
 
     }
 }
