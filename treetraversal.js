@@ -16,6 +16,11 @@
 // if there is a right property on the node dequeued - add it to the 
 
 
+// DFS - goes down to the lowest level before going to the sibling nodes
+
+// PreOrder - visit the node first, before going to the left child
+
+
 class Node {
     constructor(value){
         this.value = value;
@@ -69,6 +74,36 @@ class BinarySearchTree {
     		if (node.left) { queue.push(node.left) };
     		if (node.right) { queue.push(node.right) };
     	}
+    }
+
+    DFSPreOrder(){
+
+    	// create a variable to store the values of nodes visited
+    	// store teh root of the BST in a node called current
+
+    	// Write a helper function called current
+    	// 	push the value of the node to the variable that stores the values
+    	// 	if the node has a left property call the helper function with the left property on the node
+    	// 	if the node has a right property call the helper function with the right property on the node
+
+    	// invoke the helper function on the current variable
+
+    	// return the array of values
+
+    	var visited = []
+    	visited = traverse(this.root, visited);
+    	return visited
+    
+	    function traverse(node) {
+	    	if (!node.left && !node.right) {
+	    		return visited;
+	    	}
+
+	    	visited.push(node.value)
+	    	if (node.left) { visited = traverse(node.left) };
+	    	if (node.right) { visited = traverse(node.right) };
+	    }
+
     }
 }
 
@@ -130,3 +165,4 @@ tree.insert(15);
 tree.insert(3);
 tree.insert(8);
 tree.insert(20);
+console.log("DFS", tree.DFSPreOrder())
