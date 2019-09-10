@@ -21,6 +21,22 @@
 // PreOrder - visit the node first, before going to the left child
 
 
+
+// WHY BFS OVER DFS??
+
+// if you have a big and wide tree - BFS has higher space complexity because you are storing a queue
+
+// DFS - you only need to take up a left most branch, call stack is recursive and hence only need 1 operation stored
+
+// Time Complexity is same as BFS and DFS
+
+// When to Pre, Post and Inorder for DFS
+
+// In Order - for Binary Search Tree sorted - then it is in ascending order.
+
+// Pre Order - for sorted BST  -then it is good for duplicating or flattening out the tree
+
+
 class Node {
     constructor(value){
         this.value = value;
