@@ -22,32 +22,39 @@
 
 class Heap {
 	constructor(){
-		this.values = [];
+		this.values = [41,39,33,18,27,12];
 	}
 
 	insert(val) {
 		this.values.push(val)
+		return this.bubbleUp ()
+	}
+
+	bubbleUp(){
+				// console.log(this.values)
 		var index = this.values.length-1;
+		let child = this.values[index]
 
-		var parentIndex = Math.floor((index - 1) / 2);
-
-		var childIndex = this.values[index]
-		var parentIndex = this.values[parentIndex]
-
-		var temp
-
-		while (parentIndex >=0 && childIndex > parentIndex) {
+		while (true) {
 			
+			let parentIndex = Math.floor((index - 1) / 2);
+			let parent = this.values[parentIndex]
+
 			// swap
-			temp = this.values[parentIndex];
-			this.values[parentIndex] = this.values[childIndex];
-			this.values[childIndex] = temp;
+			if (parent >= child || parentIndex < 0) {
+				break
+			}
 
+			this.values[parentIndex] = child;
+			this.values[index] = parent;
 			index = parentIndex;
-			parentIndex = Math.floor((index - 1) / 2);
 		}
-
-		return this.values;
 	}
 
 }
+
+var newHeap = new Heap()
+
+newHeap.insert(55)
+
+console.log(newHeap.values)
