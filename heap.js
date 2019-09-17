@@ -45,7 +45,7 @@
 
 class Heap {
 	constructor(){
-		this.values = [41,39,33,18,27,12];
+		this.values = [55,39,41,18,27,12,33];
 	}
 
 	insert(val) {
@@ -91,37 +91,52 @@ class Heap {
 		this.values[this.values.length-1] = temp;
 
 		var result = this.values.pop();
-		let index = 0
+		
+		let index = 0;
+		let length = this.values.length;
+		let parent = this.values[index];
 
 		while (true) {
 			let leftChildIndex = 2 * index + 1;
 			let rightChildIndex = 2 * index + 2;
+			let swap = null;
 
-			let leftChild = this.values[leftChildIndex];
-			let rightChild = this.values[rightChildIndex];
+			let leftChild, rightChild;
 
-			let parent = this.values[index];
+			if (leftChildIndex < length) {
+				 leftChild = this.values[leftChildIndex];
 
-			if (parent > leftChild && parent > rightChild) {
-				break
-			}
-
-			if (!leftChild && !rightChild) {
-				break
-			}
-
-			if (leftChild > rightChild && parent < leftChild) {
-				this.values[index] = leftChild;
-				this.values[leftChildIndex] = parent
-				index = leftChildIndex;
+				if (parent < leftChild) {
+					swap = leftChildIndex
+				}
 			}
 
 
-			if (leftChild < rightChild && parent < rightChild) {
-				this.values[index] = rightChild;
-				this.values[rightChildIndex] = parent
-				index = rightChildIndex;
+			if (rightChildIndex < length) {
+				 rightChild = this.values[rightChildIndex];
+
+				if (parent < rightChild && rightChild > leftChild || swap === null && parent < rightChild) {
+					swap = rightChildIndex
+				}
+
 			}
+
+
+			// if (parent > leftChild && parent > rightChild) {
+			// 	break
+			// }
+
+			// if (!leftChild && !rightChild) {
+			// 	break
+			// }
+
+
+
+			if (swap === null) break
+
+			this.values[index] = this.values[swap];
+			this.values[swap] = parent
+			index = swap
 		}
 		return result
 	}
@@ -130,8 +145,8 @@ class Heap {
 
 var newHeap = new Heap()
 
-newHeap.insert(55)
-newHeap.insert(45)
-
+// newHeap.insert(55)
+// newHeap.insert(45)
+newHeap.remove()
 
 console.log(newHeap.values)
