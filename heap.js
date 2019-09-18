@@ -41,6 +41,9 @@
 
 
 
+// Big O
+// Insertion and Removal is great in order - thsi is Log N
+
 
 
 class Heap {
