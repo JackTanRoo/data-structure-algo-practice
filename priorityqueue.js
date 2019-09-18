@@ -5,9 +5,9 @@
 // except change the direction of the comparison
 
 class Node {
-	constructor() {
-		this.val = undefined;
-		this.priority = undefined;
+	constructor(val, priority) {
+		this.val = val;
+		this.priority = priority;
 	}
 }
 
@@ -35,8 +35,9 @@ class PriorityQueue {
 		];
 	}
 
-	enqueue(val) {
-		this.values.push(val)
+	enqueue(val, priority) {
+		var node = new Node(val, priority)
+		this.values.push(node)
 		return this.bubbleUp ()
 	}
 
@@ -51,7 +52,7 @@ class PriorityQueue {
 			let parent = this.values[parentIndex]
 
 			// swap
-			if (parent <= child || parentIndex < 0) {
+			if (parent.priority <= child.priority || parentIndex < 0) {
 				break
 			}
 
@@ -75,7 +76,7 @@ class PriorityQueue {
 
 			if (leftChildIndex < length) {
 				leftChild = this.values[leftChildIndex];
-				if (parent > leftChild) {
+				if (parent.priority > leftChild.priority) {
 					swap = leftChildIndex
 				}
 			}
@@ -84,7 +85,7 @@ class PriorityQueue {
 			if (rightChildIndex < length) {
 				rightChild = this.values[rightChildIndex];
 
-				if (parent > rightChild && rightChild < leftChild || swap === null && parent > rightChild) {
+				if (parent.priority > rightChild.priority && rightChild.priority < leftChild.priority || swap === null && parent.priority > rightChild.priority ) {
 					swap = rightChildIndex
 				}
 
